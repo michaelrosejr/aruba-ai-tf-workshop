@@ -206,6 +206,14 @@ python-versions = "*"
 pycparser = "*"
 
 [[package]]
+name = "cfgv"
+version = "3.3.1"
+description = "Validate configuration and produce human readable error messages."
+category = "main"
+optional = false
+python-versions = ">=3.6.1"
+
+[[package]]
 name = "charset-normalizer"
 version = "3.1.0"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
@@ -288,6 +296,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "distlib"
+version = "0.3.6"
+description = "Distribution utilities"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "executing"
 version = "1.2.0"
 description = "Get the currently executing AST node of a frame, and other information"
@@ -308,6 +324,18 @@ python-versions = "*"
 
 [package.extras]
 devel = ["colorama", "jsonschema", "json-spec", "pylint", "pytest", "pytest-benchmark", "pytest-cache", "validictory"]
+
+[[package]]
+name = "filelock"
+version = "3.12.0"
+description = "A platform independent file lock."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo (>=2023.3.27)", "sphinx-autodoc-typehints (>=1.23,!=1.23.4)", "sphinx (>=6.1.3)"]
+testing = ["covdefaults (>=2.3)", "coverage (>=7.2.3)", "diff-cover (>=7.5)", "pytest-cov (>=4)", "pytest-mock (>=3.10)", "pytest-timeout (>=2.1)", "pytest (>=7.3.1)"]
 
 [[package]]
 name = "flatbuffers"
@@ -424,6 +452,17 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 numpy = ">=1.14.5"
+
+[[package]]
+name = "identify"
+version = "2.5.24"
+description = "File identification library for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+license = ["ukkonen"]
 
 [[package]]
 name = "idna"
@@ -972,6 +1011,14 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "nodeenv"
+version = "1.8.0"
+description = "Node.js virtual environment builder"
+category = "main"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*"
+
+[[package]]
 name = "notebook-shim"
 version = "0.2.3"
 description = "A shim layer for notebook traits and config"
@@ -1120,6 +1167,21 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.extras]
 dev = ["pre-commit", "tox"]
+
+[[package]]
+name = "pre-commit"
+version = "3.3.2"
+description = "A framework for managing and maintaining multi-language pre-commit hooks."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+cfgv = ">=2.0.0"
+identify = ">=1.0.0"
+nodeenv = ">=0.11.1"
+pyyaml = ">=5.1"
+virtualenv = ">=20.10.0"
 
 [[package]]
 name = "prometheus-client"
@@ -1657,6 +1719,23 @@ secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "cer
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
+name = "virtualenv"
+version = "20.23.0"
+description = "Virtual Python Environment builder"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+distlib = ">=0.3.6,<1"
+filelock = ">=3.11,<4"
+platformdirs = ">=3.2,<4"
+
+[package.extras]
+docs = ["furo (>=2023.3.27)", "proselint (>=0.13)", "sphinx-argparse (>=0.4)", "sphinx (>=6.1.3)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=22.12)"]
+test = ["covdefaults (>=2.3)", "coverage-enable-subprocess (>=1)", "coverage (>=7.2.3)", "flaky (>=3.7)", "packaging (>=23.1)", "pytest-env (>=0.8.1)", "pytest-freezegun (>=0.4.2)", "pytest-mock (>=3.10)", "pytest-randomly (>=3.12)", "pytest-timeout (>=2.1)", "pytest (>=7.3.1)", "setuptools (>=67.7.1)", "time-machine (>=2.9)"]
+
+[[package]]
 name = "wcwidth"
 version = "0.2.6"
 description = "Measures the displayed width of unicode strings in a terminal"
@@ -1722,7 +1801,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<3.12"
-content-hash = "520c81cded950111b2d52eb1e016d8b7397ed189522dc304b53de41ab602ff50"
+content-hash = "a9ce4fb7d00043c32c7ee36c8268bcf3bd674871780987fd72776426e19f8d5c"
 
 [metadata.files]
 absl-py = []
@@ -1808,6 +1887,10 @@ cffi = [
     {file = "cffi-1.15.1-cp39-cp39-win_amd64.whl", hash = "sha256:70df4e3b545a17496c9b3f41f5115e69a4f2e77e94e1d2a8e1070bc0c38c8a3c"},
     {file = "cffi-1.15.1.tar.gz", hash = "sha256:d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"},
 ]
+cfgv = [
+    {file = "cfgv-3.3.1-py2.py3-none-any.whl", hash = "sha256:c6a0883f3917a037485059700b9e75da2464e6c27051014ad85ba6aaa5884426"},
+    {file = "cfgv-3.3.1.tar.gz", hash = "sha256:f5a830efb9ce7a445376bb66ec94c638a9787422f96264c98edc6bdeed8ab736"},
+]
 charset-normalizer = []
 colorama = []
 comm = []
@@ -1816,8 +1899,10 @@ cycler = []
 debugpy = []
 decorator = []
 defusedxml = []
+distlib = []
 executing = []
 fastjsonschema = []
+filelock = []
 flatbuffers = []
 fonttools = []
 fqdn = []
@@ -1827,6 +1912,7 @@ google-auth-oauthlib = []
 google-pasta = []
 grpcio = []
 h5py = []
+identify = []
 idna = []
 ipykernel = []
 ipython = []
@@ -1860,6 +1946,7 @@ nbclient = []
 nbconvert = []
 nbformat = []
 nest-asyncio = []
+nodeenv = []
 notebook-shim = []
 numpy = []
 oauthlib = []
@@ -1879,6 +1966,7 @@ pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
     {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
 ]
+pre-commit = []
 prometheus-client = []
 prompt-toolkit = []
 protobuf = []
@@ -1986,6 +2074,7 @@ traitlets = []
 typing-extensions = []
 uri-template = []
 urllib3 = []
+virtualenv = []
 wcwidth = []
 webcolors = []
 webencodings = [
