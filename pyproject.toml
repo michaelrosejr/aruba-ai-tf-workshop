@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "aruba-ai-workshop-tf"
+version = "0.1.0"
+description = ""
+authors = ["Michael Rose Jr. <michael.rose@hpe.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+tensorflow = "^2.12.0"
+opencv-python = "^4.7.0"
+matplotlib = "^3.7.1"
+jupyterlab = "^4.0.0"
+ipykernel = "^6.23.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
